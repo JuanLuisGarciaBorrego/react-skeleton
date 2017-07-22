@@ -1,4 +1,7 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const env = process.env.NODE_ENV
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
@@ -6,8 +9,23 @@ module.exports = {
         path: __dirname + '/dist', 
         filename: 'app.bundle.js'
     },
-  plugins: [new HtmlWebpackPlugin({
-      title: 'React project starter',
-      template: __dirname + '/src/template-html.ejs'
-  })]
+    module:{
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    //resolve-url-loader may be chained before sass-loader if necessary
+                    use: ['css-loader', 'sass-loader']
+                    })
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'React project starter',
+            template: __dirname + '/src/template-html.ejs'
+        }),
+        new ExtractTextPlugin('style.css')
+    ]
 }
