@@ -1,0 +1,11 @@
+{
+  "name": "react-skeleton",
+  "version": "0.0.1",
+  "description": "React project starter",
+  "main": "index.js",
+  "author": "Juan Luis García Borrego <juanluisgarciaborrego@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.3.0"
+  }
+}
