@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "React project starter",
   "main": "index.js",
+  "scripts": {
+      "dev": "webpack -d --watch",
+      "prod": "webpack -p"
+  },
   "author": "Juan Luis García Borrego <juanluisgarciaborrego@gmail.com>",
   "license": "MIT",
   "devDependencies": {
