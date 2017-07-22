@@ -21,6 +21,11 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        host: '0.0.0.0',
+        port: 8080,
+        inline: true
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'React project starter',
