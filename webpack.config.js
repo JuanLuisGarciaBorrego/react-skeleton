@@ -15,7 +15,6 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    //resolve-url-loader may be chained before sass-loader if necessary
                     use: ['css-loader', 'sass-loader']
                     })
             }
@@ -23,7 +22,7 @@ module.exports = {
     },
     devServer: {
         host: '0.0.0.0',
-        port: 8080,
+        port: 9000,
         inline: true
     },
     plugins: [
