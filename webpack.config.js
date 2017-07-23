@@ -18,7 +18,11 @@ module.exports = {
                     use: ['css-loader', 'sass-loader']
                 })
             },
-            { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" }
+            { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" },
+            {
+                 test: /\.(jpe?g|png|gif|svg)$/i,
+                 use: [ 'file-loader?name=[name].[ext]&outputPath=images/C' ]
+            }
         ]
     },
     devServer: {
